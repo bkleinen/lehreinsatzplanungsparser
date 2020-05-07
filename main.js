@@ -1,11 +1,12 @@
 "use strict";
-const sheetName = 'Tabelle1'
-const headerRange = 'A1:L1'
-const values = 'A2:L106'
 
 const fs = require('fs');
 const XLSX = require('xlsx');
 /* equivalent to `var wb = XLSX.readFile("sheetjs.xlsx");` */
+
+const sheetName = 'Tabelle1'
+const headerRange = 'A1:L1'
+const values = 'A2:L106'
 var buf = fs.readFileSync("imi-lep-ws19.xlsx");
 var wb = XLSX.read(buf, {type: 'buffer'});
 const sheet = wb.Sheets.Tabelle1
@@ -44,5 +45,3 @@ for (var row = fromRow; row <= toRow; row++) {
     result.push(rowObject)
 }
 console.log(result)
-
-
